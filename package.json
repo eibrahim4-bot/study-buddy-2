@@ -1,0 +1,8 @@
+{
+  "name": "focus-friend",
+  "version": "1.0.0",
+  "description": "A cute desktop study buddy for Erini, Arly, and Sydney",
+  "main": "main.js",
+  "scripts": { "start": "electron .", "pack": "electron-packager . FocusFriend --overwrite" },
+  "devDependencies": { "electron": "^35.0.0", "electron-packager": "^17.1.2" }
+}
