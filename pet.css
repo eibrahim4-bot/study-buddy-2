@@ -1,0 +1,26 @@
+#focus-friend-pet{position:fixed;right:16px;bottom:16px;z-index:2147483647;width:98px;height:128px;font-family:system-ui,sans-serif;user-select:none;pointer-events:none}
+#focus-friend-pet *{box-sizing:border-box}
+#focus-friend-pet .ff-pet{pointer-events:auto;position:absolute;bottom:0;left:3px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:0;width:90px;height:100px;border:0;border-radius:24px;background:rgba(255,255,255,.78);box-shadow:0 5px 20px rgba(66,49,87,.18);cursor:grab;padding:3px 6px 7px;backdrop-filter:blur(8px);transition:transform .2s ease}
+#focus-friend-pet .ff-pet:hover{transform:translateY(-3px) scale(1.03)}
+#focus-friend-pet .ff-pet:active{cursor:grabbing}
+#focus-friend-pet .ff-face{font-size:48px;line-height:1.05;filter:drop-shadow(0 3px 2px #d8c8e5);animation:ff-bob 2.2s infinite ease-in-out}
+#focus-friend-pet .ff-spark{position:absolute;top:4px;left:11px;color:#f5b8d2;animation:ff-twinkle 1.4s infinite}
+#focus-friend-pet .ff-heart{position:absolute;top:4px;right:10px;color:#f28aae;animation:ff-float 1.6s infinite}
+#focus-friend-pet .ff-health{width:70px;height:7px;display:block;background:#eee7f4;border-radius:99px;overflow:hidden;margin-top:3px;box-shadow:inset 0 1px 2px #00000010}
+#focus-friend-pet .ff-health-fill{display:block;width:100%;height:100%;border-radius:99px;transition:width .35s,background .35s}
+#focus-friend-pet .ff-mood{font-size:8px;font-weight:800;letter-spacing:.5px;color:#625779;line-height:13px}
+#focus-friend-pet .ff-bubble{display:none;position:absolute;right:-5px;bottom:110px;width:max-content;max-width:220px;padding:9px 12px;border:1px solid #f0d8e5;border-radius:14px;background:#fff8fc;color:#44385f;font-size:12px;line-height:1.35;box-shadow:0 4px 16px #33224420}
+#focus-friend-pet .ff-bubble:after{content:"";position:absolute;right:24px;bottom:-6px;width:10px;height:10px;transform:rotate(45deg);background:#fff8fc;border-right:1px solid #f0d8e5;border-bottom:1px solid #f0d8e5}
+#focus-friend-pet .ff-bubble.ff-visible,#focus-friend-pet .ff-bubble.ff-manual{display:block}
+#focus-friend-pet .ff-distracted .ff-face{animation:ff-worried .55s infinite alternate}
+#focus-friend-pet .ff-sad .ff-face{filter:grayscale(.15) drop-shadow(0 3px 2px #d8c8e5)}
+#focus-friend-pet .ff-fainted .ff-face{animation:ff-faint 1s infinite alternate;filter:grayscale(.8)}
+#focus-friend-pet[data-mood="happy"] .ff-mood{color:#258b69}
+#focus-friend-pet[data-mood="sad"] .ff-mood,#focus-friend-pet[data-mood="panicking"] .ff-mood{color:#c75c71}
+@keyframes ff-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes ff-worried{from{transform:rotate(-4deg)}to{transform:rotate(4deg) translateY(-2px)}}
+@keyframes ff-faint{to{transform:rotate(90deg) translateY(5px)}}
+@keyframes ff-twinkle{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+@keyframes ff-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes ff-pop{0%{transform:scale(.8);opacity:.4}100%{transform:scale(1);opacity:1}}
+#focus-friend-pet .ff-bubble.ff-pop{animation:ff-pop .22s ease-out}
