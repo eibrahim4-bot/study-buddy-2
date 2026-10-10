@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Focus Friend</title><link rel="stylesheet" href="panel.css"></head>
+<body>
+<header><div class="brand"><span class="paw">🐾</span><div><h1>Focus Friend</h1><p>Your tiny study buddy</p></div></div><div class="points">⭐ <b id="points">0</b></div></header>
+<main>
+<section class="pet-card"><div id="bigpet" class="bigpet">🐶</div><div><h2 id="mood">Ready to focus?</h2><p id="message">Let's make today a little more productive.</p></div></section>
+<section class="timer-card"><div class="row"><h2>Study session</h2><span id="state" class="pill">Ready</span></div>
+<div id="timer" class="timer">25:00</div><label for="minutes">Session length</label><div class="controls"><input id="minutes" type="number" min="1" max="180" value="25"><span>minutes</span></div>
+<div class="buttons"><button id="start" class="primary">▶ Start focus</button><button id="pause" class="secondary" disabled>Ⅱ Pause</button><button id="reset" class="secondary">↻ Reset</button></div>
+<div class="health-label"><span>Buddy health</span><b id="healthText">100 / 100</b></div><div class="health-track"><div id="healthBar"></div></div>
+<p class="hint" id="focusStatus">Distraction sites reduce health after a short grace period.</p></section>
+<section class="stats"><div><span>🔥 Streak</span><strong id="streak">0 days</strong></div><div><span>⏱ Focused</span><strong id="focused">0 min</strong></div></section>
+<section class="shop"><div class="row"><h2>Little shop</h2><span class="hint">Keep your favorites forever</span></div><div class="items">
+<button class="item" data-cost="50" data-item="Bow"><span>🎀</span><b>Bow</b><small>50 points</small></button>
+<button class="item" data-cost="75" data-item="Hat"><span>🎩</span><b>Hat</b><small>75 points</small></button>
+<button class="item" data-cost="10" data-item="Treat"><span>🦴</span><b>Treat</b><small>10 points · +20 health</small></button>
+<button class="item" data-cost="200" data-item="Fox buddy"><span>🦊</span><b>Fox buddy</b><small>200 points</small></button>
+</div><p id="shopMessage" class="hint" aria-live="polite"></p></section>
+<section class="settings"><h2>Distraction sites</h2><p class="hint">These sites will be flagged during a running session. You can edit this list.</p><textarea id="sites" rows="3" spellcheck="false"></textarea><button id="saveSites" class="secondary">Save site list</button></section>
+<footer>Built with love by Erini, Arly &amp; Sydney 💗</footer>
+</main><script src="panel.js"></script></body></html>
